@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lojas Dalia - tradição em cama, mesa e banho no Centro do Rio de Janeiro desde 1976. Marcas selecionadas de enxoval e decoração para o lar.">
+<title>Lojas Dalia — Cama, Mesa e Banho desde 1976</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Helvetica Neue',Arial,sans-serif;color:#2b2520;background:#fdfaf6;line-height:1.6;font-size:16px}
+img{max-width:100%;display:block}
+a{color:#7a4a2b;text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Header */
+.topbar{background:#1f2c3d;color:#f4ebde;font-size:13px;padding:8px 0;text-align:center;letter-spacing:.3px}
+.topbar span{margin:0 10px}
+header.main{background:#fff;border-bottom:1px solid #e8dfd0;padding:18px 0;position:sticky;top:0;z-index:100}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo .brand{font-family:Georgia,'Times New Roman',serif;font-size:30px;color:#1f2c3d;font-weight:700;letter-spacing:.5px}
+.logo .sub{font-size:11px;color:#7a4a2b;letter-spacing:3px;text-transform:uppercase;margin-top:4px}
+nav.menu ul{list-style:none;display:flex;gap:28px;flex-wrap:wrap}
+nav.menu a{color:#2b2520;font-size:14px;text-transform:uppercase;letter-spacing:1px;font-weight:500}
+nav.menu a:hover{color:#7a4a2b;text-decoration:none}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#f4ebde 0%,#e8dfd0 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:rgba(122,74,43,.08);border-radius:50%}
+.hero::after{content:"";position:absolute;bottom:-80px;left:-80px;width:260px;height:260px;background:rgba(31,44,61,.06);border-radius:50%}
+.hero-inner{position:relative;z-index:2}
+.hero .eyebrow{color:#7a4a2b;font-size:13px;letter-spacing:4px;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:Georgia,serif;font-size:46px;color:#1f2c3d;font-weight:700;margin-bottom:20px;line-height:1.15}
+.hero p.lead{font-size:18px;color:#5a4f43;max-width:680px;margin:0 auto 32px;line-height:1.7}
+.hero-cta{display:inline-block;background:#1f2c3d;color:#fdfaf6;padding:15px 40px;border-radius:2px;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:600;transition:background .2s}
+.hero-cta:hover{background:#7a4a2b;text-decoration:none}
+
+/* Sections */
+section{padding:70px 0}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title .eyebrow{color:#7a4a2b;font-size:12px;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px}
+.section-title h2{font-family:Georgia,serif;font-size:36px;color:#1f2c3d;font-weight:700}
+
+/* Sobre */
+.sobre{background:#fff}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.sobre-text p{margin-bottom:18px;color:#5a4f43;font-size:16px;line-height:1.8}
+.sobre-text h3{font-family:Georgia,serif;color:#1f2c3d;font-size:28px;margin-bottom:20px}
+.sobre-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.stat{background:#f4ebde;padding:24px;text-align:center;border-radius:2px}
+.stat .num{font-family:Georgia,serif;font-size:36px;color:#7a4a2b;font-weight:700;line-height:1}
+.stat .lbl{font-size:13px;color:#5a4f43;margin-top:6px;letter-spacing:.5px}
+.sobre-img{background:#1f2c3d;aspect-ratio:1;border-radius:2px;display:flex;align-items:center;justify-content:center;color:#f4ebde;font-family:Georgia,serif;text-align:center;padding:40px;position:relative;overflow:hidden}
+.sobre-img::before{content:"";position:absolute;inset:20px;border:1px solid rgba(244,235,222,.3)}
+.sobre-img .label{position:relative;z-index:2}
+.sobre-img .label .y{font-size:90px;font-weight:700;letter-spacing:-3px;line-height:1}
+.sobre-img .label .t{font-size:14px;letter-spacing:5px;text-transform:uppercase;margin-top:12px;color:#c9b596}
+
+/* Categorias */
+.categorias{background:#fdfaf6}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.cat-card{background:#fff;padding:36px 24px;text-align:center;border:1px solid #e8dfd0;border-radius:2px;transition:transform .25s,box-shadow .25s}
+.cat-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(31,44,61,.08)}
+.cat-card .icon{width:60px;height:60px;margin:0 auto 18px;background:#f4ebde;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#7a4a2b;font-size:24px;font-family:Georgia,serif;font-weight:700}
+.cat-card h3{font-family:Georgia,serif;color:#1f2c3d;font-size:20px;margin-bottom:10px}
+.cat-card p{font-size:14px;color:#5a4f43;line-height:1.6}
+
+/* Marcas */
+.marcas{background:#1f2c3d;color:#f4ebde}
+.marcas .section-title h2{color:#f4ebde}
+.marcas .section-title .eyebrow{color:#c9b596}
+.marcas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px;margin:0 auto}
+.marca-box{background:rgba(244,235,222,.08);border:1px solid rgba(244,235,222,.15);padding:28px 16px;text-align:center;font-family:Georgia,serif;font-size:18px;letter-spacing:1px;border-radius:2px}
+.marcas-foot{text-align:center;margin-top:32px;font-size:14px;color:#c9b596;font-style:italic}
+
+/* Como atendemos */
+.atendimento{background:#fff}
+.atend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.atend-item{text-align:center;padding:20px}
+.atend-item .num-step{display:inline-block;width:48px;height:48px;background:#7a4a2b;color:#fdfaf6;border-radius:50%;font-family:Georgia,serif;font-size:22px;font-weight:700;line-height:48px;margin-bottom:18px}
+.atend-item h3{font-family:Georgia,serif;color:#1f2c3d;font-size:20px;margin-bottom:12px}
+.atend-item p{color:#5a4f43;font-size:15px}
+
+/* Contato */
+.contato{background:#f4ebde}
+.contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.contato-info h3{font-family:Georgia,serif;color:#1f2c3d;font-size:24px;margin-bottom:24px}
+.contato-info .info-item{margin-bottom:20px;padding-left:30px;position:relative}
+.contato-info .info-item::before{content:"";position:absolute;left:0;top:6px;width:18px;height:18px;background:#7a4a2b;border-radius:50%}
+.contato-info .info-item strong{display:block;color:#1f2c3d;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.contato-info .info-item span{color:#5a4f43;font-size:15px}
+.horario{background:#fff;padding:28px;border-radius:2px;border:1px solid #e8dfd0}
+.horario h4{font-family:Georgia,serif;color:#1f2c3d;font-size:20px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid #e8dfd0}
+.horario-row{display:flex;justify-content:space-between;padding:8px 0;font-size:14px;color:#5a4f43}
+.horario-row strong{color:#1f2c3d}
+
+/* Footer */
+footer{background:#1f2c3d;color:#c9b596;padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand .brand{font-family:Georgia,serif;font-size:24px;color:#f4ebde;font-weight:700;margin-bottom:12px}
+.footer-brand .sub{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#7a4a2b;margin-bottom:18px}
+.footer-brand p{font-size:14px;line-height:1.7;color:#a89b86}
+.footer-col h4{color:#f4ebde;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;font-weight:600}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:8px;font-size:14px;color:#a89b86}
+.footer-col a{color:#a89b86;font-size:14px}
+.footer-col a:hover{color:#f4ebde}
+.legal-block{border-top:1px solid rgba(244,235,222,.12);padding-top:30px;text-align:center;font-size:12px;line-height:1.8;color:#a89b86}
+.legal-block .empresa{color:#f4ebde;font-weight:600;display:block;margin-bottom:6px;font-size:13px}
+.legal-block .links{margin:14px 0}
+.legal-block .links a{color:#c9b596;margin:0 14px;font-size:12px;text-transform:uppercase;letter-spacing:1px}
+.legal-block .copy{margin-top:18px;font-size:11px;color:#7a8094}
+
+/* Modal */
+.modal{display:none;position:fixed;inset:0;background:rgba(31,44,61,.85);z-index:1000;overflow-y:auto;padding:40px 20px}
+.modal.open{display:flex;justify-content:center;align-items:flex-start}
+.modal-content{background:#fdfaf6;max-width:780px;width:100%;padding:50px 60px;border-radius:2px;position:relative;margin:auto}
+.modal-close{position:absolute;top:18px;right:24px;background:none;border:none;font-size:28px;color:#7a4a2b;cursor:pointer;line-height:1}
+.modal-content h2{font-family:Georgia,serif;color:#1f2c3d;margin-bottom:8px;font-size:30px}
+.modal-content h3{font-family:Georgia,serif;color:#1f2c3d;margin-top:28px;margin-bottom:12px;font-size:18px}
+.modal-content p{margin-bottom:14px;color:#5a4f43;font-size:14.5px;line-height:1.75}
+.modal-content ul{margin:12px 0 14px 22px;color:#5a4f43;font-size:14.5px}
+.modal-content ul li{margin-bottom:6px;line-height:1.7}
+.modal-content .updated{font-size:12px;color:#7a4a2b;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid #e8dfd0}
+
+/* Responsive */
+@media (max-width:900px){
+  .sobre-grid,.contato-grid{grid-template-columns:1fr;gap:40px}
+  .cat-grid,.marcas-grid{grid-template-columns:repeat(2,1fr)}
+  .atend-grid{grid-template-columns:1fr;gap:20px}
+  .footer-grid{grid-template-columns:1fr;gap:30px}
+  nav.menu ul{gap:18px}
+  nav.menu a{font-size:13px}
+  .hero h1{font-size:34px}
+  .hero p.lead{font-size:16px}
+  .section-title h2{font-size:28px}
+  .modal-content{padding:32px 22px}
+  .sobre-stats{grid-template-columns:1fr 1fr;gap:14px}
+  .stat{padding:18px 12px}
+  .stat .num{font-size:28px}
+}
+@media (max-width:560px){
+  .topbar span{display:block;margin:2px 0;font-size:12px}
+  .nav{flex-direction:column;align-items:center}
+  nav.menu ul{justify-content:center}
+  .cat-grid,.marcas-grid{grid-template-columns:1fr}
+  .hero{padding:50px 0}
+  section{padding:50px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>Atendimento presencial — Centro / Rio de Janeiro</span>
+  <span>(21) 2263-4433</span>
+</div>
+
+<header class="main">
+  <div class="container nav">
+    <div class="logo">
+      <div class="brand">Lojas Dalia</div>
+      <div class="sub">Cama · Mesa · Banho</div>
+    </div>
+    <nav class="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#categorias">Coleções</a></li>
+        <li><a href="#marcas">Marcas</a></li>
+        <li><a href="#atendimento">Atendimento</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="eyebrow">Tradição carioca desde 1976</div>
+    <h1>Conforto e bom gosto para a sua casa</h1>
+    <p class="lead">Há quase cinco décadas, selecionamos enxoval de cama, mesa e banho das melhores marcas brasileiras para os lares cariocas. Atendimento próximo, curadoria criteriosa e o cuidado de quem entende de casa.</p>
+    <a href="#contato" class="hero-cta">Fale com a nossa equipe</a>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-text">
+        <div class="eyebrow" style="color:#7a4a2b;font-size:12px;letter-spacing:4px;text-transform:uppercase;margin-bottom:14px">Nossa história</div>
+        <h3>Uma casa que veste outras casas há quase 50 anos</h3>
+        <p>Atuamos no comércio varejista de artigos de cama, mesa e banho desde 11 de junho de 1976, no coração do Centro do Rio de Janeiro. Construímos a Lojas Dalia atendendo gerações de famílias cariocas que voltam por confiança no produto e no atendimento.</p>
+        <p>Nosso ponto físico na Rua da Alfândega reúne uma curadoria de marcas consagradas do enxoval brasileiro, com variedade de fios, tramas, gramaturas e estampas para acomodar diferentes gostos e usos — do lar de família ao enxoval profissional para hotelaria e locação por temporada.</p>
+        <div class="sobre-stats">
+          <div class="stat"><div class="num">1976</div><div class="lbl">ANO DE FUNDAÇÃO</div></div>
+          <div class="stat"><div class="num">+45</div><div class="lbl">ANOS DE TRADIÇÃO</div></div>
+        </div>
+      </div>
+      <div class="sobre-img">
+        <div class="label">
+          <div class="y">'76</div>
+          <div class="t">Desde sempre no Centro do Rio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="categorias" id="categorias">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Nossas coleções</div>
+      <h2>Para cada cômodo da sua casa</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="icon">C</div>
+        <h3>Cama</h3>
+        <p>Jogos de cama, edredons, colchas, mantas e cobertores nos tamanhos solteiro, casal, queen e king.</p>
+      </div>
+      <div class="cat-card">
+        <div class="icon">B</div>
+        <h3>Banho</h3>
+        <p>Toalhas de banho, rosto e lavabo, jogos completos, roupões, tapetes e acessórios.</p>
+      </div>
+      <div class="cat-card">
+        <div class="icon">M</div>
+        <h3>Mesa</h3>
+        <p>Toalhas, jogos americanos, guardanapos, panos de copa e prato para o dia a dia ou ocasiões especiais.</p>
+      </div>
+      <div class="cat-card">
+        <div class="icon">D</div>
+        <h3>Decoração</h3>
+        <p>Capas de almofada, cortinas, tapetes e mantas para compor o ambiente com personalidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="marcas" id="marcas">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Curadoria de marcas</div>
+      <h2>Selecionamos o melhor do enxoval brasileiro</h2>
+    </div>
+    <div class="marcas-grid">
+      <div class="marca-box">Kacyumara</div>
+      <div class="marca-box">Buddemeyer</div>
+      <div class="marca-box">Buettner</div>
+      <div class="marca-box">Döhler</div>
+      <div class="marca-box">Tognato</div>
+      <div class="marca-box">Genova</div>
+      <div class="marca-box">Accua</div>
+      <div class="marca-box">Tellesoft</div>
+    </div>
+    <p class="marcas-foot">Trabalhamos apenas com fornecedores oficiais — autenticidade e procedência garantidas em toda peça.</p>
+  </div>
+</section>
+
+<section class="atendimento" id="atendimento">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Como atendemos</div>
+      <h2>Atendimento humano em cada etapa</h2>
+    </div>
+    <div class="atend-grid">
+      <div class="atend-item">
+        <div class="num-step">1</div>
+        <h3>Você nos procura</h3>
+        <p>Pelo telefone, e-mail ou diretamente em nossa loja na Rua da Alfândega. Equipe própria, especializada em enxoval.</p>
+      </div>
+      <div class="atend-item">
+        <div class="num-step">2</div>
+        <h3>Curadoria personalizada</h3>
+        <p>Entendemos o uso, o ambiente e as preferências. Apresentamos opções compatíveis com diferentes faixas de orçamento.</p>
+      </div>
+      <div class="atend-item">
+        <div class="num-step">3</div>
+        <h3>Entrega ou retirada</h3>
+        <p>Combinamos a melhor forma de envio para a Cidade do Rio de Janeiro ou retirada presencial em nossa loja.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Fale com a gente</div>
+      <h2>Estamos no Centro do Rio para receber você</h2>
+    </div>
+    <div class="contato-grid">
+      <div class="contato-info">
+        <h3>Nossos canais</h3>
+        <div class="info-item">
+          <strong>Endereço</strong>
+          <span>Rua da Alfândega, 336 — 2º andar (parte)<br>Centro — Rio de Janeiro / RJ<br>CEP 20.061-021</span>
+        </div>
+        <div class="info-item">
+          <strong>Telefone</strong>
+          <span>(21) 2263-4433</span>
+        </div>
+        <div class="info-item">
+          <strong>E-mail</strong>
+          <span>sanjche86@gmail.com</span>
+        </div>
+        <div class="info-item">
+          <strong>CNPJ</strong>
+          <span>42.565.671/0001-40</span>
+        </div>
+      </div>
+      <div class="horario">
+        <h4>Horário de atendimento</h4>
+        <div class="horario-row"><strong>Segunda à sexta</strong><span>09h às 18h</span></div>
+        <div class="horario-row"><strong>Sábados</strong><span>09h às 14h</span></div>
+        <div class="horario-row"><strong>Domingos e feriados</strong><span>Fechado</span></div>
+        <p style="margin-top:20px;font-size:13px;color:#5a4f43;line-height:1.7">Para atendimento fora desses horários, entre em contato pelo e-mail e responderemos no próximo dia útil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">Lojas Dalia</div>
+        <div class="sub">Cama · Mesa · Banho</div>
+        <p>Comércio varejista de artigos de cama, mesa e banho atuando no Centro do Rio de Janeiro desde 1976. Curadoria, tradição e atendimento próximo.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#categorias">Coleções</a></li>
+          <li><a href="#marcas">Marcas</a></li>
+          <li><a href="#atendimento">Atendimento</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Atendimento</h4>
+        <ul>
+          <li>(21) 2263-4433</li>
+          <li>sanjche86@gmail.com</li>
+          <li>Seg a Sex: 09h–18h</li>
+          <li>Sáb: 09h–14h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal-block">
+      <span class="empresa">DALIA COMERCIO DE ROUPAS LTDA</span>
+      CNPJ 42.565.671/0001-40 — Inscrição Ativa desde 11/06/1976<br>
+      Rua da Alfândega, 336, 2º andar (parte) — Centro — Rio de Janeiro / RJ — CEP 20.061-021<br>
+      Telefone: (21) 2263-4433 — E-mail: sanjche86@gmail.com
+      <div class="links">
+        <a href="#" onclick="openModal('privacyModal');return false;">Política de Privacidade</a>
+        <a href="#" onclick="openModal('termsModal');return false;">Termos de Uso</a>
+      </div>
+      <div class="copy">© 2026 Lojas Dalia — Dalia Comercio de Roupas LTDA. Todos os direitos reservados.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal: Política de Privacidade -->
+<div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('privacyModal')" aria-label="Fechar">×</button>
+    <h2 id="privacyTitle">Política de Privacidade</h2>
+    <p class="updated">Última atualização: junho de 2026</p>
+
+    <p>Esta Política de Privacidade descreve como a <strong>DALIA COMERCIO DE ROUPAS LTDA</strong>, inscrita no CNPJ sob o nº 42.565.671/0001-40, com sede na Rua da Alfândega, 336, 2º andar (parte), Centro, Rio de Janeiro/RJ, CEP 20.061-021 (doravante "Lojas Dalia"), coleta, utiliza, armazena e protege os dados pessoais dos visitantes e clientes deste site, em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 — LGPD).</p>
+
+    <h3>1. Dados que coletamos</h3>
+    <p>Coletamos apenas os dados estritamente necessários para o atendimento ao público. Estes podem incluir:</p>
+    <ul>
+      <li>Nome completo, telefone e e-mail, quando você nos contata voluntariamente;</li>
+      <li>Endereço de entrega, caso solicite envio de produtos;</li>
+      <li>Dados de navegação, como endereço IP, tipo de navegador e páginas visitadas, coletados automaticamente para fins estatísticos e de segurança.</li>
+    </ul>
+
+    <h3>2. Finalidade do tratamento</h3>
+    <p>Utilizamos seus dados exclusivamente para:</p>
+    <ul>
+      <li>Responder solicitações de contato e prestar atendimento comercial;</li>
+      <li>Processar pedidos, emitir nota fiscal e organizar entregas;</li>
+      <li>Cumprir obrigações legais, fiscais e regulatórias;</li>
+      <li>Aprimorar a experiência de navegação em nosso site.</li>
+    </ul>
+
+    <h3>3. Compartilhamento de dados</h3>
+    <p>Não vendemos, alugamos ou comercializamos seus dados pessoais. O compartilhamento com terceiros ocorre apenas quando estritamente necessário para a execução do serviço solicitado (por exemplo, transportadoras para entrega) ou por exigência legal.</p>
+
+    <h3>4. Armazenamento e segurança</h3>
+    <p>Seus dados são armazenados em ambiente controlado, com medidas técnicas e administrativas adequadas para protegê-los contra acesso não autorizado, perda ou alteração indevida. Mantemos os dados pelo tempo necessário ao cumprimento das finalidades descritas ou conforme exigido por lei.</p>
+
+    <h3>5. Cookies</h3>
+    <p>Este site utiliza cookies essenciais ao seu funcionamento e cookies analíticos para entender como nossos visitantes interagem com o conteúdo. Você pode desativá-los nas configurações do seu navegador, ciente de que isso pode afetar a experiência de uso.</p>
+
+    <h3>6. Seus direitos como titular</h3>
+    <p>De acordo com a LGPD, você tem direito a:</p>
+    <ul>
+      <li>Confirmar a existência de tratamento de seus dados;</li>
+      <li>Acessar e corrigir dados incompletos, inexatos ou desatualizados;</li>
+      <li>Solicitar a anonimização, bloqueio ou eliminação de dados desnecessários;</li>
+      <li>Solicitar a portabilidade dos dados;</li>
+      <li>Revogar consentimento previamente concedido.</li>
+    </ul>
+    <p>Para exercer qualquer desses direitos, entre em contato pelo e-mail <strong>sanjche86@gmail.com</strong>.</p>
+
+    <h3>7. Alterações nesta Política</h3>
+    <p>Esta Política poderá ser atualizada periodicamente. Recomendamos que você revise este documento sempre que utilizar nosso site.</p>
+
+    <h3>8. Contato</h3>
+    <p>Em caso de dúvidas sobre esta Política, entre em contato:<br>
+    DALIA COMERCIO DE ROUPAS LTDA — CNPJ 42.565.671/0001-40<br>
+    Rua da Alfândega, 336, 2º andar (parte) — Centro — Rio de Janeiro / RJ<br>
+    Telefone: (21) 2263-4433 — E-mail: sanjche86@gmail.com</p>
+  </div>
+</div>
+
+<!-- Modal: Termos de Uso -->
+<div class="modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('termsModal')" aria-label="Fechar">×</button>
+    <h2 id="termsTitle">Termos de Uso</h2>
+    <p class="updated">Última atualização: junho de 2026</p>
+
+    <p>Bem-vindo ao site institucional da <strong>Lojas Dalia</strong>, mantido pela DALIA COMERCIO DE ROUPAS LTDA, CNPJ 42.565.671/0001-40, com sede na Rua da Alfândega, 336, 2º andar (parte), Centro, Rio de Janeiro/RJ. Ao acessar este site, você concorda com os termos descritos a seguir.</p>
+
+    <h3>1. Objeto do site</h3>
+    <p>Este site tem caráter institucional e informativo, apresentando ao público a história, as coleções e os canais de atendimento da Lojas Dalia. Não realizamos vendas diretamente por este endereço eletrônico; o atendimento comercial ocorre presencialmente em nossa loja física, por telefone ou por e-mail.</p>
+
+    <h3>2. Uso permitido</h3>
+    <p>O conteúdo deste site é disponibilizado para consulta pessoal e não comercial. É vedada a reprodução, redistribuição, modificação ou utilização do material aqui publicado sem autorização prévia e expressa da Lojas Dalia.</p>
+
+    <h3>3. Propriedade intelectual</h3>
+    <p>Todos os elementos visuais, textuais e gráficos deste site — incluindo marca, identidade visual, fotografias e textos — são de titularidade da Lojas Dalia ou de seus respectivos detentores de direito, e estão protegidos pela legislação brasileira de propriedade intelectual.</p>
+
+    <h3>4. Direito do consumidor</h3>
+    <p>Cumprimos integralmente o Código de Defesa do Consumidor (Lei nº 8.078/1990), incluindo o direito de arrependimento de 7 dias para compras realizadas fora do estabelecimento (art. 49) e a garantia legal de 90 dias contra vícios e defeitos de fabricação.</p>
+
+    <h3>5. Atendimento e canais</h3>
+    <p>Pedidos de informação, solicitação de orçamento, troca, devolução ou qualquer outra demanda relacionada aos nossos produtos e serviços podem ser feitos pelo telefone (21) 2263-4433, pelo e-mail sanjche86@gmail.com ou presencialmente em nossa loja, dentro dos horários publicados.</p>
+
+    <h3>6. Limitação de responsabilidade</h3>
+    <p>Empenhamo-nos para manter as informações deste site corretas e atualizadas, mas não garantimos a ausência de erros ou interrupções. Não nos responsabilizamos por danos decorrentes da indisponibilidade temporária do site ou de informações desatualizadas.</p>
+
+    <h3>7. Links externos</h3>
+    <p>Eventuais links para sites de terceiros são oferecidos por conveniência. Não nos responsabilizamos pelo conteúdo, políticas ou práticas desses sites.</p>
+
+    <h3>8. Legislação aplicável e foro</h3>
+    <p>Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da Comarca da Cidade do Rio de Janeiro/RJ para dirimir quaisquer controvérsias decorrentes do uso deste site, com exclusão de qualquer outro, por mais privilegiado que seja.</p>
+
+    <h3>9. Alterações</h3>
+    <p>Reservamo-nos o direito de modificar estes Termos a qualquer tempo. A versão vigente é sempre a publicada nesta página.</p>
+
+    <h3>10. Contato</h3>
+    <p>DALIA COMERCIO DE ROUPAS LTDA — CNPJ 42.565.671/0001-40<br>
+    Rua da Alfândega, 336, 2º andar (parte) — Centro — Rio de Janeiro / RJ<br>
+    Telefone: (21) 2263-4433 — E-mail: sanjche86@gmail.com</p>
+  </div>
+</div>
+
+<script>
+// Failsafe: conteúdo nunca depende deste script pra ser visível.
+// Aqui só ativamos modal e suavização extra do scroll.
+(function(){
+  try {
+    window.openModal = function(id){
+      var m = document.getElementById(id);
+      if(m){ m.classList.add('open'); document.body.style.overflow='hidden'; }
+    };
+    window.closeModal = function(id){
+      var m = document.getElementById(id);
+      if(m){ m.classList.remove('open'); document.body.style.overflow=''; }
+    };
+    // Fechar modal clicando fora
+    document.querySelectorAll('.modal').forEach(function(modal){
+      modal.addEventListener('click', function(e){
+        if(e.target === modal){ modal.classList.remove('open'); document.body.style.overflow=''; }
+      });
+    });
+    // ESC fecha
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        document.querySelectorAll('.modal.open').forEach(function(m){
+          m.classList.remove('open'); document.body.style.overflow='';
+        });
+      }
+    });
+  } catch(err){
+    // Mesmo se algo travar aqui, o site institucional permanece 100% visível e navegável.
+  }
+})();
+</script>
+
+</body>
+</html>
